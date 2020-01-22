@@ -116,7 +116,7 @@ if (started === false) {
 return (
         
         <div className="container">
-        <div className="title">Quiz</div>
+        <div className="title">Welcome to Math quiz!</div>
         <button className="startBtn" onClick={this.startQuiz}>Start!</button>
         </div>        
     )
@@ -127,14 +127,14 @@ else  if (finished) {
       <div className="container">
         <h1>Game Over! You scored {this.state.score} {this.state.score === 1? 'point' : 'points'}. </h1>
           <h2>Correct answers:</h2>
-          <div>
+          <div className="correctAnswers">
             {data.map((item, index) => (
-              <p key={index}>
+              <div key={index} className="correctAnwer">
                 {item.correct_answer}
-              </p>
+              </div>
             ))}
         </div>
-        <button className="nextBtn" onClick={this.playAgain}>Play again</button>
+        <button className="playAgainBtn" onClick={this.playAgain}>Play again</button>
       </div>
     );
   } 
@@ -143,7 +143,7 @@ else  if (finished) {
       return (
         <div className="container">
           <h1>{this.state.question} </h1>
-          <span>{`Question ${current + 1} out of ${data.length}`}</span>       
+          <h3>{`Question ${current + 1} out of ${data.length}`}</h3>       
 
             {options.map((option, index) => (
               <p key={index} onClick={() => this.setUserAnswer(option)} className={`options ${userAnswer === option ? "selected" : null}`}>
