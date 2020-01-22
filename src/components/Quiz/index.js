@@ -36,7 +36,6 @@ async componentDidMount() {
       options: options
     })
 
-    console.log(options);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -54,8 +53,6 @@ async componentDidMount() {
       this.setState({
         options: options
       })
-  
-      console.log(options);
     }
   } 
 
@@ -95,7 +92,6 @@ shuffle(array) {
       array[length] = array[index];
       array[index] = temp;
   }
-  console.log(array);
   return array
 }
   
@@ -110,6 +106,7 @@ playAgain = () => {
       started: false,
       finished: false
     })
+    window.location.reload();
 }
 
 render () {
