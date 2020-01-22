@@ -73,13 +73,13 @@
     background: linear-gradient(to right, #51a558, #6be690);
   }
 
-  .correctAnwers {
+  /* .correctAnwers {
     display: flex;
-    justify-content: space-between
-  }
+    flex-direction: column;
+  } */
 
   .correctAnwer {
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 10px;
     background: linear-gradient(to right, #51a558, #6be690);
     height: 20px;
@@ -89,7 +89,7 @@
     left: 0px;
     right: 0px;
     margin: auto;
-    display: inline-block
+  /*  display: inline-block; */
   }
 
   .playAgainBtn {
