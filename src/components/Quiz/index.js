@@ -107,7 +107,8 @@ finishQuiz = () => {
 
 playAgain = () => {
     this.setState({
-      started: false
+      started: false,
+      finished: false
     })
 }
 
