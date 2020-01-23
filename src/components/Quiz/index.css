@@ -46,13 +46,42 @@
     cursor: pointer
   }
 
-
   .nextBtn {
     position: absolute;
     font-size: 1.4em;
     padding: 10px;
     top: 550px;
     background-color: rgb(15, 51, 15);
+    color: rgb(255, 255, 255);
+    width: 150px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    outline: none;
+    cursor: pointer
+  }
+
+  .finishBtn {
+    position: absolute;
+    font-size: 1.4em;
+    padding: 10px;
+    top: 550px;
+    background-color: rgb(15, 51, 15);
+    color: rgb(255, 255, 255);
+    width: 150px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    outline: none;
+    cursor: pointer
+  }
+
+  .playAgainBtn {
+    position: absolute;
+    font-size: 1.4em;
+    padding: 10px;
+    top: 640px;
+    background-color: rgb(50, 156, 50);
     color: rgb(255, 255, 255);
     width: 150px;
     left: 0px;
@@ -84,19 +113,4 @@
     left: 0px;
     right: 0px;
     margin: auto;
-  }
-
-  .playAgainBtn {
-    position: absolute;
-    font-size: 1.4em;
-    padding: 10px;
-    top: 640px;
-    background-color: rgb(15, 51, 15);
-    color: rgb(255, 255, 255);
-    width: 150px;
-    left: 0px;
-    right: 0px;
-    margin: auto;
-    outline: none;
-    cursor: pointer
   }

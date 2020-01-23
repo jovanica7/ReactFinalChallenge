@@ -172,7 +172,7 @@ else  if (finished) {
             </button>
           )}
           {current === 9 && (
-            <button className="nextBtn" onClick={this.finishQuiz} disabled={this.state.disabled}>
+            <button className="finishBtn" onClick={this.finishQuiz} disabled={this.state.disabled}>
               Finish
             </button>
           )}
