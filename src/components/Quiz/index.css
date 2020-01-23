@@ -73,11 +73,6 @@
     background: linear-gradient(to right, #51a558, #6be690);
   }
 
-  /* .correctAnwers {
-    display: flex;
-    flex-direction: column;
-  } */
-
   .correctAnwer {
     border: 1px solid black;
     padding: 10px;
@@ -89,7 +84,6 @@
     left: 0px;
     right: 0px;
     margin: auto;
-  /*  display: inline-block; */
   }
 
   .playAgainBtn {

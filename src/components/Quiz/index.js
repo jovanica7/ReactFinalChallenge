@@ -16,7 +16,8 @@ constructor (props) {
         userAnswer: null,
         score: 0,
         disabled: true,
-        finished: false
+        finished: false,
+        counter: 0,
     }
 }
 async componentDidMount() {
@@ -35,7 +36,20 @@ async componentDidMount() {
     this.setState({
       options: options
     })
+    let counter = 0;
+        const interval = setInterval(() => {
+        counter += 1;
+        this.setState({
+            counter: counter
+        })
+            if (this.state.finished) {
+                clearInterval(interval);
+            }
+        }, 1000);
+  }
 
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -125,11 +139,12 @@ return (
 else  if (finished) {
     return (
       <div className="container">
-        <h1>Game Over! You scored {this.state.score} {this.state.score === 1? 'point' : 'points'}. </h1>
+        <h2>Game Over! You scored {this.state.score} {this.state.score === 1? 'point' : 'points'} and {this.state.score > 5 ? 'succeded' : 'failed'} to solve the quiz.</h2>
+        <h2>Time needed for taking the quiz was {this.state.counter} seconds. </h2>
           <h2>Correct answers:</h2>
           <div className="correctAnswers">
             {data.map((item, index) => (
-              <div key={index} className="correctAnwer">
+              <div className="correctAnwer" key={index}>
                 {item.correct_answer}
               </div>
             ))}
