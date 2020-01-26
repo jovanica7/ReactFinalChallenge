@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <QuizComponent />
+      <p>edfd</p>
     </div>
   );
 }
