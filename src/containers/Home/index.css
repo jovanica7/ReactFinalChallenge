@@ -1,0 +1,93 @@
+.nav {
+    background-color: #b4580c;
+    overflow: hidden;
+}
+
+.nav a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.background {
+	background-image: url("home.jpg");
+	height: auto;
+	width: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	margin: 5px  
+}
+
+.home {
+    display: grid;
+    grid-gap: 100px;
+    grid-row-gap: 35px;
+    grid-template-columns: 700px 700px;
+    margin: 50px
+}
+
+#mathematics {
+    border-style: solid;
+    border-width:5px;
+    border-color: #b4580c;
+    background-color: orange;
+    width: 400px;
+    height: 250px;
+    padding: 5px;
+    display: inline-block;
+    margin-left: 350px;
+    margin-top: 50px;
+}
+   
+#art  {
+    border-style: solid;
+    border-color: #b4580c;
+    background-color: orange;
+    border-width:5px;
+    width: 400px;
+    height: 250px;
+    padding: 5px;
+    display: inline-block;
+    margin-top: 50px;
+    margin-right: 20px;
+}
+   
+#sports {
+    border-style: solid;
+    border-color: #b4580c;
+    background-color: orange;
+    border-width:5px;
+    width: 400px;
+    height: 250px;
+    padding: 5px;
+    display: inline-block;
+    margin-left: 350px;
+    margin-bottom: 20px;
+}
+   
+#animals {
+    border-style: solid;
+    border-color: #b4580c;
+    background-color: orange;
+    border-width:5px;
+    width: 400px;
+    height: 250px;
+    padding: 5px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.chooseBtn {
+    font-size: 1.4em;
+    padding: 10px;
+    background-color: rgb(50, 156, 50);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin: 0 auto;
+    width: 100px;
+}
