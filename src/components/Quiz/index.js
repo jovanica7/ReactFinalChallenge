@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
-import './index.css';
+import '../index.css';
+import WelcomeComponent from '../Welcome';
+import ResultComponent from '../Result';
 
 class QuizComponent extends PureComponent {
 
@@ -58,7 +60,7 @@ async componentDidMount() {
       this.setState(() => {
         return {
             disabled: true,
-            question: data[this.state.current].question,
+            question: data[this.state.current].question.replace(/&quot;/g, '"').replace(/&pi;/, 'pi '),
             answer: data[this.state.current].correct_answer,
             wrongAnswers: data[this.state.current].incorrect_answers
         };
@@ -128,57 +130,43 @@ render () {
 
 if (started === false) {
 return (
-        
-        <div className="container">
-        <div className="title">Welcome to Math quiz!</div>
-        <button className="startBtn" onClick={this.startQuiz}>Start!</button>
-        </div>        
+        <WelcomeComponent start={this.startQuiz}/>             
     )
 }
 
 else  if (finished) {
     return (
-      <div className="container">
-        <h2>Game Over! You scored {this.state.score} {this.state.score === 1? 'point' : 'points'} and {this.state.score > 5 ? 'succeded' : 'failed'} to solve the quiz.</h2>
-        <h2>Time needed for taking the quiz was {this.state.counter} seconds. </h2>
-          <h2>Correct answers:</h2>
-          <div className="correctAnswers">
-            {data.map((item, index) => (
-              <div className="correctAnwer" key={index}>
-                {item.correct_answer}
-              </div>
-            ))}
-        </div>
-        <button className="playAgainBtn" onClick={this.playAgain}>Play again</button>
-      </div>
-    );
+      <ResultComponent score={this.state.score} counter={this.state.counter} answers={data} play={this.playAgain}/>
+    )
   } 
 
  else {
-      return (
-        <div className="container">
-          <h1>{this.state.question} </h1>
-          <h3>{`Question ${current + 1} out of ${data.length}`}</h3>       
-
-            {options.map((option, index) => (
-              <p key={index} onClick={() => this.setUserAnswer(option)} className={`options ${userAnswer === option ? "selected" : null}`}>
-                {option}
-              </p>
-            ))}
+    return (
+      <div className="container">
+      <h1>{this.state.question} </h1>
+      <h3>{`Question ${current + 1} out of ${data.length}`}</h3>       
+      <div className="allOptions">
+        {options.map((option, index) => (
+          <p key={index} onClick={() => this.setUserAnswer(option)} className={`options ${userAnswer === option ? "selected" : null}`}>
+            {option}
+          </p>
           
-          {current < 9 && (
-            <button className="nextBtn" disabled={this.state.disabled} onClick={this.goToNextQuestion}>
-              Next
-            </button>
-          )}
-          {current === 9 && (
-            <button className="finishBtn" onClick={this.finishQuiz} disabled={this.state.disabled}>
-              Finish
-            </button>
-          )}
-          </div>
-      );
-    }
+        ))}
+      </div>
+      
+      {current < data.length - 1 && (
+        <button className="nextBtn" disabled={this.state.disabled} onClick={this.goToNextQuestion}>
+          Next
+        </button>
+      )}
+      {current === data.length - 1 && (
+        <button className="finishBtn" onClick={this.finishQuiz} disabled={this.state.disabled}>
+          Finish
+        </button>
+      )}
+      </div>
+    )
+  }
 
 }
 

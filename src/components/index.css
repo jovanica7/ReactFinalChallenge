@@ -50,7 +50,7 @@
     position: absolute;
     font-size: 1.4em;
     padding: 10px;
-    top: 550px;
+    bottom: 30px;
     background-color: rgb(15, 51, 15);
     color: rgb(255, 255, 255);
     width: 150px;
@@ -65,7 +65,7 @@
     position: absolute;
     font-size: 1.4em;
     padding: 10px;
-    top: 550px;
+    bottom: 30px;
     background-color: rgb(15, 51, 15);
     color: rgb(255, 255, 255);
     width: 150px;
@@ -80,7 +80,7 @@
     position: absolute;
     font-size: 1.4em;
     padding: 10px;
-    top: 640px;
+    bottom: 10px;
     background-color: rgb(50, 156, 50);
     color: rgb(255, 255, 255);
     width: 150px;
@@ -91,11 +91,25 @@
     cursor: pointer
   }
 
+  .allOptions {
+    margin-top: 80px;
+    position: absolute;
+    top: 20%;
+    left: 2%;
+  }
+
   .options {
     cursor: pointer;
     border: 2px solid black;
     padding: 20px;
-    background-color: #8ff0ac
+    background-color: #8ff0ac;
+    width: 200px;
+    height: 20px;
+    margin-left: 215px
+  }
+
+  .options:hover {
+    transform: scale(1.04);
   }
 
   .selected {
@@ -108,9 +122,17 @@
     background: linear-gradient(to right, #51a558, #6be690);
     height: 20px;
     width: 200px;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin: auto;
+    margin-left: 225px;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
+
+  .passed {
+    color: #0b9133;
+  }
+
+  .failed {
+    color: #a1140a
+  }
+
+
