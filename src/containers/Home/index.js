@@ -24,7 +24,10 @@ class HomeComponent extends PureComponent {
         else {
             return (     
                 <div className="background">
-                <div className="nav"><a href="/#">Korisnik</a></div>
+                <div className="nav">
+                    <a href="/#"><img className="profilePicture" src={this.props.picture} alt="profilePicture" /></a>
+                    <div id="nick">{this.props.nickName}</div>
+                </div>
                 <div className="home">
                     <div id="mathematics">
                         <h1>Mathematics</h1>
@@ -80,6 +83,7 @@ class HomeComponent extends PureComponent {
                     categoryName: 'Animals'
                 });
               break; 
+               
           }
 
          
