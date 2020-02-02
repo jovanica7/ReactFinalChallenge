@@ -30,8 +30,8 @@ async componentDidMount() {
         return {
             data: json.results,
             question: ReactHtmlParser(json.results[this.state.current].question),
-            answer: ReactHtmlParser(json.results[this.state.current].correct_answer),
-            wrongAnswers: ReactHtmlParser(json.results[this.state.current].incorrect_answers),        
+            answer: json.results[this.state.current].correct_answer,
+            wrongAnswers: json.results[this.state.current].incorrect_answers,        
         }     
   });
   let options = this.shuffle([...json.results[this.state.current].incorrect_answers, json.results[this.state.current].correct_answer])
@@ -62,8 +62,8 @@ async componentDidMount() {
         return {
             disabled: true,
             question: ReactHtmlParser(data[this.state.current].question),
-            answer: ReactHtmlParser(data[this.state.current].correct_answer),
-            wrongAnswers: ReactHtmlParser(data[this.state.current].incorrect_answers)
+            answer: data[this.state.current].correct_answer,
+            wrongAnswers: data[this.state.current].incorrect_answers
         };
       });
       let options = this.shuffle([...data[this.state.current].incorrect_answers, data[this.state.current].correct_answer])
@@ -123,7 +123,10 @@ playAgain = () => {
       started: false,
       finished: false
     })
+
+   // this.forceUpdate();
     window.location.reload();
+
 }
 
 render () {
