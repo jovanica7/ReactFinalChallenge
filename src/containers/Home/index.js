@@ -8,7 +8,8 @@ class HomeComponent extends PureComponent {
         super (props)
         this.state = {
             selected: false,
-            category: ''
+            category: '',
+            categoryName: ''
         }
     }
 
@@ -16,7 +17,7 @@ class HomeComponent extends PureComponent {
 
         if (this.state.selected) {
                 return (
-                    <QuizComponent category={this.state.category}/>
+                    <QuizComponent category={this.state.category} categoryName={this.state.categoryName}/>
                 )
         }
 
@@ -54,25 +55,29 @@ class HomeComponent extends PureComponent {
             case 'mathBtn':
                 this.setState({
                     selected: true,
-                    category: '19'
+                    category: '19',
+                    categoryName: 'Math'
                 });
               break;
             case 'sciNatureBtn':
                 this.setState({
                     selected: true,
-                    category: '17'
+                    category: '17',
+                    categoryName: 'Science and Nature'
                 });
               break;
             case 'sportsBtn':
                 this.setState({
                     selected: true,
-                    category: '21'
+                    category: '21',
+                    categoryName: 'Sports'
                 });
               break;
             case 'animalsBtn':
                 this.setState({
                     selected: true,
-                    category: '27'
+                    category: '27',
+                    categoryName: 'Animals'
                 });
               break; 
           }

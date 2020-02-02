@@ -20,7 +20,7 @@ constructor (props) {
         score: 0,
         disabled: true,
         finished: false,
-        counter: 0,
+        counter: 0
     }
 }
 async componentDidMount() {
@@ -134,7 +134,7 @@ render () {
 
 if (started === false) {
 return (
-        <WelcomeComponent start={this.startQuiz}/>             
+        <WelcomeComponent start={this.startQuiz} category={this.props.categoryName}/>             
     )
 }
 
