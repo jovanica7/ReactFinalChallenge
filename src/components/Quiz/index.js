@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import '../index.css';
 import WelcomeComponent from '../Welcome';
 import ResultComponent from '../Result';
+import ReactHtmlParser from 'react-html-parser'
 
 class QuizComponent extends PureComponent {
 
@@ -23,23 +24,23 @@ constructor (props) {
     }
 }
 async componentDidMount() {
-    const response = await fetch('https://opentdb.com/api.php?amount=10&category=19&difficulty=medium&type=multiple');
-    const json = await response.json();
-    this.setState(() => {
+  const response = await fetch('https://opentdb.com/api.php?amount=10&category=' + this.props.category + '&difficulty=medium&type=multiple');
+  const json = await response.json();
+  this.setState(() => {
         return {
             data: json.results,
-            question: json.results[this.state.current].question,
-            answer: json.results[this.state.current].correct_answer,
-            wrongAnswers: json.results[this.state.current].incorrect_answers,
-            
+            question: ReactHtmlParser(json.results[this.state.current].question),
+            answer: ReactHtmlParser(json.results[this.state.current].correct_answer),
+            wrongAnswers: ReactHtmlParser(json.results[this.state.current].incorrect_answers),        
         }     
-    });
-    let options = this.shuffle([...json.results[this.state.current].incorrect_answers, json.results[this.state.current].correct_answer])
-    this.setState({
-      options: options
-    })
-    let counter = 0;
-        const interval = setInterval(() => {
+  });
+  let options = this.shuffle([...json.results[this.state.current].incorrect_answers, json.results[this.state.current].correct_answer])
+  this.setState({
+        options: options
+  });
+
+  let counter = 0;
+  const interval = setInterval(() => {
         counter += 1;
         this.setState({
             counter: counter
@@ -47,7 +48,7 @@ async componentDidMount() {
             if (this.state.finished) {
                 clearInterval(interval);
             }
-        }, 1000);
+    }, 1000);
   }
 
   componentWillUnmount() {
@@ -60,9 +61,9 @@ async componentDidMount() {
       this.setState(() => {
         return {
             disabled: true,
-            question: data[this.state.current].question.replace(/&quot;/g, '"').replace(/&pi;/, 'pi '),
-            answer: data[this.state.current].correct_answer,
-            wrongAnswers: data[this.state.current].incorrect_answers
+            question: ReactHtmlParser(data[this.state.current].question),
+            answer: ReactHtmlParser(data[this.state.current].correct_answer),
+            wrongAnswers: ReactHtmlParser(data[this.state.current].incorrect_answers)
         };
       });
       let options = this.shuffle([...data[this.state.current].incorrect_answers, data[this.state.current].correct_answer])

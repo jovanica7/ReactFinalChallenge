@@ -1,47 +1,27 @@
 import React, { PureComponent } from 'react';
 import './index.css';
+import QuizComponent from './../../components/Quiz/index';
 
 class HomeComponent extends PureComponent {
 
     constructor (props) {
         super (props)
         this.state = {
-            selectedMath: false,
-            selectedArt: false,
-            selectedSports: false,
-            selectedAnimals: false
+            selected: false,
+            category: ''
         }
     }
 
     render () {
 
-        if (this.state.selectedMath) {
+        if (this.state.selected) {
                 return (
-                    <div>Matis</div>
+                    <QuizComponent category={this.state.category}/>
                 )
         }
 
-        else if (this.state.selectedArt) {
-            return (
-                <div>Umetnost</div>
-            )
-        }
-
-        else if (this.state.selectedSports) {
-            return (
-                <div>Sport</div>
-            )
-        }
-
-        else if (this.state.selectedAnimals) {
-            return (
-                <div>Zivotinje</div>
-            )
-        }
-
         else {
-            return (
-            
+            return (     
                 <div className="background">
                 <div className="nav"><a href="/#">Korisnik</a></div>
                 <div className="home">
@@ -49,9 +29,9 @@ class HomeComponent extends PureComponent {
                         <h1>Mathematics</h1>
                         <button id="mathBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>
                     </div>
-                    <div id="art">
-                        <h1>Art</h1>
-                        <button id="artBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>
+                    <div id="sciNature">
+                        <h1>Science and Nature</h1>
+                        <button id="sciNatureBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>
                     </div>
                     <div id="sports">
                         <h1>Sports</h1>
@@ -73,27 +53,31 @@ class HomeComponent extends PureComponent {
         switch (buttonId) {
             case 'mathBtn':
                 this.setState({
-                    selectedMath: true,
+                    selected: true,
+                    category: '19'
                 });
               break;
-            case 'artBtn':
+            case 'sciNatureBtn':
                 this.setState({
-                    selectedArt: true,
+                    selected: true,
+                    category: '17'
                 });
               break;
             case 'sportsBtn':
                 this.setState({
-                    selectedSports: true,
+                    selected: true,
+                    category: '21'
                 });
               break;
             case 'animalsBtn':
                 this.setState({
-                    selectedAnimals: true,
+                    selected: true,
+                    category: '27'
                 });
-              break;      
+              break; 
           }
-          console.log(buttonId)
-        
+
+         
     }
 
 }

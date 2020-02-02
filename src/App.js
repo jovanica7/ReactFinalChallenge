@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import QuizComponent from './components/Quiz';
 import HomeComponent from './containers/Home';
 
 function App() {
