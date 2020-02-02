@@ -23,7 +23,8 @@ constructor (props) {
         counter: 0
     }
 }
-async componentDidMount() {
+
+  async fetchData () {
   const response = await fetch('https://opentdb.com/api.php?amount=10&category=' + this.props.category + '&difficulty=medium&type=multiple');
   const json = await response.json();
   this.setState(() => {
@@ -39,8 +40,47 @@ async componentDidMount() {
         options: options
   });
 
-  let counter = 0;
-  const interval = setInterval(() => {
+  }
+
+  componentDidMount() {
+      this.fetchData();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.data.length === 0) {
+      this.fetchData();
+    }
+    else {
+      const { data } = this.state;
+      if (this.state.current !== prevState.current) {
+        this.setState(() => {
+          return {
+              disabled: true,
+              question: ReactHtmlParser(data[this.state.current].question),
+              answer: data[this.state.current].correct_answer,
+              wrongAnswers: data[this.state.current].incorrect_answers
+          };
+        });
+        let options = this.shuffle([...data[this.state.current].incorrect_answers, data[this.state.current].correct_answer])
+        this.setState({
+          options: options
+        })
+      }
+    }
+    
+  } 
+
+startQuiz = () => {
+      this.setState({
+          started: true
+      })
+
+      let counter = 0;
+      const interval = setInterval(() => {
         counter += 1;
         this.setState({
             counter: counter
@@ -49,34 +89,6 @@ async componentDidMount() {
                 clearInterval(interval);
             }
     }, 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const { data } = this.state;
-    if (this.state.current !== prevState.current) {
-      this.setState(() => {
-        return {
-            disabled: true,
-            question: ReactHtmlParser(data[this.state.current].question),
-            answer: data[this.state.current].correct_answer,
-            wrongAnswers: data[this.state.current].incorrect_answers
-        };
-      });
-      let options = this.shuffle([...data[this.state.current].incorrect_answers, data[this.state.current].correct_answer])
-      this.setState({
-        options: options
-      })
-    }
-  } 
-
-startQuiz = () => {
-      this.setState({
-          started: true
-      })
 }
 
 setUserAnswer = (answer) => {
@@ -119,13 +131,25 @@ finishQuiz = () => {
 } 
 
 playAgain = () => {
-    this.setState({
-      started: false,
-      finished: false
-    })
+    this.setState(() => {
+      return {
+        data: [],
+        current: 0,
+        question: '',
+        answer: '',
+        wrongAnswers: [],
+        options: [],
+        started: false,
+        userAnswer: null,
+        score: 0,
+        disabled: true,
+        finished: false,
+        counter: 0
+      }
+    });
 
-   // this.forceUpdate();
-    window.location.reload();
+   // window.location.reload();
+ 
 
 }
 
