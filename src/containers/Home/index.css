@@ -25,7 +25,7 @@
     display: grid;
     grid-gap: 100px;
     grid-row-gap: 35px;
-    grid-template-columns: 700px 700px;
+    grid-template-columns: 800px 800px;
     margin: 50px
 }
 
@@ -38,7 +38,7 @@
     height: 250px;
     padding: 5px;
     display: inline-block;
-    margin-left: 350px;
+    margin-left: 400px;
     margin-top: 50px;
 }
    
@@ -52,7 +52,7 @@
     padding: 5px;
     display: inline-block;
     margin-top: 50px;
-    margin-right: 20px;
+    margin-right: 0px;
 }
    
 #sports {
@@ -64,8 +64,8 @@
     height: 250px;
     padding: 5px;
     display: inline-block;
-    margin-left: 350px;
-    margin-bottom: 20px;
+    margin-left: 400px;
+    margin-bottom: 0px;
 }
    
 #animals {
