@@ -52,56 +52,52 @@ class RegisterComponent extends PureComponent {
         else {
             return(
                 <center>
-                <div>
+                <div className="form"> 
                     <h2>Register Here</h2>
                     <form onSubmit={this.register}>
                         <table>
                             <tbody>
                         <tr>
-                            <td align="left">First Name*</td>
-                            <td align="left">
+                            <td className="label">First Name*</td>
+                            <td>
                                 <input type="text" name="firstName" onChange={this.handleChange} required/>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left">Last Name*</td>
-                            <td align="left">
+                            <td className="label">Last Name*</td>
+                            <td>
                                 <input type="text" name="lastName" onChange={this.handleChange} required/>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left">Nick Name*</td>
-                            <td align="left">
+                            <td className="label">Nick Name*</td>
+                            <td>
                                 <input type="text" name="nickName" onChange={this.handleChange} required/>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left">Gender</td>
-                            <td align="left">
+                            <td className="label">Gender</td>
+                            <td>
                                 <input type="radio" name="gender" value="male" onChange={this.handleChange}/> Male
                                 <input type="radio" name="gender" value="female" onChange={this.handleChange}/> Female
                                 <input type="radio" name="gender" value="other" onChange={this.handleChange}/> Other
                             </td>
                         </tr>
                         <tr>
-                            <td align="left">Birthday:</td>
-                            <td align="left">
+                            <td className="label">Birthday</td>
+                            <td>
                                 <input type="date" name="birthDate" onChange={this.handleChange}/>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left">Profile Picture*</td>
-                            <td align="left">
+                            <td className="label">Picture*</td>
+                            <td>
                                 <input type="file" name="picture" onChange={this.handleUpload} required/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left">
-                                <input type="submit" value="submit" />
                             </td>
                         </tr>
                         </tbody>
                     </table>
+                    <input type="submit" value="Register!" />
                 </form>
               </div>
             </center>

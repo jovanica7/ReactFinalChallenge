@@ -13,3 +13,44 @@
     width: 50px;
     height: 20px;
 }
+
+.form {
+	max-width: 500px;
+	padding: 10px 20px;
+	background: #f4f7f8;
+	margin: 100px auto;
+	padding: 20px;
+	background: #f4f7f8;
+	border-radius: 8px;
+	font-family: Georgia, "Times New Roman", Times, serif
+}
+
+.form input[type="text"],
+.form input[type="date"] {
+    font-family: Georgia, "Times New Roman", Times, serif;
+	border-radius: 4px;
+	font-size: 15px;
+	padding: 10px;
+	width: 100%;
+	background-color: #e8eeef;
+	color:#8a97a0;
+    margin-top: 20px
+}
+
+.form input[type="submit"] {
+    background-color: #0ebb98;
+    width: 100px;
+    height: 40px;
+    margin-left: 30px;
+    margin-top: 50px
+}
+
+.label {
+	display: block;
+    margin-bottom: 15px;
+    margin-top: 30px
+}
+
+h2 {
+    margin-top: 5px
+}
