@@ -12,7 +12,10 @@ const ResultComponent = props => {
                 {item.correct_answer}
               </p>
             ))}
+        <div id="buttons">
         <button className="playAgainBtn" onClick={props.play}>Play again</button>
+        <button className="shareBtn">Share</button>
+        </div>
         </div>
        )
 }

@@ -84,11 +84,11 @@
     background-color: rgb(50, 156, 50);
     color: rgb(255, 255, 255);
     width: 150px;
-    left: 0px;
-    right: 0px;
     margin: auto;
     outline: none;
-    cursor: pointer
+    cursor: pointer;
+    display: inline-block;
+    margin-left: -160px
   }
 
   .allOptions {
@@ -133,6 +133,27 @@
 
   .failed {
     color: #a1140a
+  }
+
+  #buttons {
+    width: 100%;
+    height: 10%;
+    text-align: center
+  }
+
+  .shareBtn {
+    position: absolute;
+    font-size: 1.4em;
+    padding: 10px;
+    bottom: 10px;
+    background-color: rgb(5, 115, 143);
+    color: rgb(255, 255, 255);
+    width: 150px;
+    margin: auto;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5px;
   }
 
 

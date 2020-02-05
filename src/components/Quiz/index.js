@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import '../index.css';
 import WelcomeComponent from '../Welcome';
 import ResultComponent from '../Result';
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser from 'react-html-parser';
 
 class QuizComponent extends PureComponent {
 
@@ -166,9 +166,9 @@ else  if (finished) {
     return (
       <ResultComponent score={this.state.score} counter={this.state.counter} answers={data} play={this.playAgain}/>
     )
-  } 
+}   
 
- else {
+else {
     return (
       <div className="container">
       <h1>{this.state.question} </h1>
