@@ -20,7 +20,6 @@ class RegisterComponent extends PureComponent {
 
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
-        console.log('pise')
     }
     
     handleUpload = (event) => {
@@ -40,7 +39,6 @@ class RegisterComponent extends PureComponent {
         this.setState({
             submitted: true
         })
-        console.log(this.state)
     }
 
 

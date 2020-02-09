@@ -185,4 +185,12 @@
       height: 20px;
   }
 
-
+  .quizBackground {
+    background-image: url("quiz.jpg");
+    height: 850px;
+    width: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5px  
+  }

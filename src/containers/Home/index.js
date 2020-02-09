@@ -25,25 +25,25 @@ class HomeComponent extends PureComponent {
         else {
             return (     
                 <div id="homeBackground">
-                <NavComponent picture = {this.props.picture} nickName = {this.props.nickName} />
-                <div id="home">
-                    <div id="mathematics">
-                        <h1>Mathematics</h1>
-                        <button id="mathBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>
+                    <NavComponent picture = {this.props.picture} nickName = {this.props.nickName} />
+                    <div id="home">
+                        <div id="mathematics">
+                            <h1>Mathematics</h1>
+                            <button id="mathBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>
+                        </div>
+                        <div id="sciNature">
+                            <h1>Science and Nature</h1>
+                            <button id="sciNatureBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>
+                        </div>
+                        <div id="sports">
+                            <h1>Sports</h1>
+                            <button id="sportsBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>
+                        </div>
+                        <div id="animals">
+                            <h1>Animals</h1>
+                            <button id="animalsBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>
+                        </div>
                     </div>
-                    <div id="sciNature">
-                        <h1>Science and Nature</h1>
-                        <button id="sciNatureBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>
-                    </div>
-                    <div id="sports">
-                        <h1>Sports</h1>
-                        <button id="sportsBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>
-                    </div>
-                    <div id="animals">
-                        <h1>Animals</h1>
-                        <button id="animalsBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>
-                    </div>
-                </div>
                 </div>
             )
         }

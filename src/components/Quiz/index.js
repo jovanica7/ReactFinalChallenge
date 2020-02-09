@@ -147,18 +147,15 @@ playAgain = () => {
         counter: 0
       }
     });
-
-   // window.location.reload();
- 
-
 }
+
 
 render () {
     const { data, current, started, options, userAnswer, finished } = this.state;
 
-if (started === false) {
+if (!started) {
 return (
-        <WelcomeComponent start={this.startQuiz} category={this.props.categoryName}/>             
+        <WelcomeComponent start={this.startQuiz} category={this.props.categoryName} />             
     )
 }
 
@@ -170,28 +167,30 @@ else  if (finished) {
 
 else {
     return (
-      <div className="container">
-      <h1>{this.state.question} </h1>
-      <h3>{`Question ${current + 1} out of ${data.length}`}</h3>       
-      <div className="allOptions">
-        {options.map((option, index) => (
-          <p key={index} onClick={() => this.setUserAnswer(option)} className={`options ${userAnswer === option ? "selected" : null}`}>
-            {option}
-          </p>
+      <div className="quizBackground">
+        <div className="container">
+          <h1>{this.state.question} </h1>
+          <h3>{`Question ${current + 1} out of ${data.length}`}</h3>       
+          <div className="allOptions">
+            {options.map((option, index) => (
+              <p key={index} onClick={() => this.setUserAnswer(option)} className={`options ${userAnswer === option ? "selected" : null}`}>
+                {option}
+              </p>
+              
+            ))}
+          </div>
           
-        ))}
-      </div>
-      
-      {current < data.length - 1 && (
-        <button className="nextBtn" disabled={this.state.disabled} onClick={this.goToNextQuestion}>
-          Next
-        </button>
-      )}
-      {current === data.length - 1 && (
-        <button className="finishBtn" onClick={this.finishQuiz} disabled={this.state.disabled}>
-          Finish
-        </button>
-      )}
+          {current < data.length - 1 && (
+            <button className="nextBtn" disabled={this.state.disabled} onClick={this.goToNextQuestion}>
+              Next
+            </button>
+          )}
+          {current === data.length - 1 && (
+            <button className="finishBtn" onClick={this.finishQuiz} disabled={this.state.disabled}>
+              Finish
+            </button>
+          )}
+        </div>
       </div>
     )
   }
