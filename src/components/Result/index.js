@@ -7,7 +7,7 @@ const ResultComponent = props => {
           <div className="container">
             <h2 className={props.score > 5 ? "passed" : "failed"}>Game Over! You scored {props.score} {props.score === 1? 'point' : 'points'} and {props.score > 5 ? 'succeded' : 'failed'} to solve the quiz.</h2>
             <h3>Time needed for taking the quiz was {props.counter} seconds. </h3>
-              <h2>Correct answers:</h2>      
+              <h3>Correct answers:</h3>      
                 {props.answers.map((item, index) => (
                   <p className="correctAnwer" key={index}>
                     {item.correct_answer}

@@ -149,7 +149,6 @@ playAgain = () => {
     });
 }
 
-
 render () {
     const { data, current, started, options, userAnswer, finished } = this.state;
 
@@ -169,8 +168,8 @@ else {
     return (
       <div className="quizBackground">
         <div className="container">
-          <h1>{this.state.question} </h1>
-          <h3>{`Question ${current + 1} out of ${data.length}`}</h3>       
+          <h2>{this.state.question}</h2>  
+          <h3 id="questionSubtitle">{`Question ${current + 1} out of ${data.length}`}</h3>     
           <div className="allOptions">
             {options.map((option, index) => (
               <p key={index} onClick={() => this.setUserAnswer(option)} className={`options ${userAnswer === option ? "selected" : null}`}>

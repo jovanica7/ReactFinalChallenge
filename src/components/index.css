@@ -8,8 +8,8 @@
   .container {
     position: absolute;
     background: rgb(231, 181, 116);
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
     border: 1px solid rgba(41, 28, 1, 0.2);
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -91,6 +91,13 @@
     margin-left: -160px
   }
 
+  #questionSubtitle {
+    margin-top: 20px;
+    position: absolute;
+    top: 20%;
+    left: 34%;
+  }
+
   .allOptions {
     margin-top: 80px;
     position: absolute;
@@ -105,7 +112,8 @@
     background-color: #8ff0ac;
     width: 200px;
     height: 20px;
-    margin-left: 215px
+    margin-left: 165px;
+    margin-top: 0px
   }
 
   .options:hover {
@@ -118,11 +126,11 @@
 
   .correctAnwer {
     border: 1px solid black;
-    padding: 10px;
+    padding: 5px;
     background: linear-gradient(to right, #51a558, #6be690);
     height: 20px;
     width: 300px;
-    margin-left: 175px;
+    margin-left: 130px;
     margin-top: 2px;
     margin-bottom: 2px;
   }

@@ -1,8 +1,8 @@
 .form {
 	max-width: 500px;
 	background: #f4f7f8;
-	margin: 100px auto;
-	padding: 20px;
+	margin: 40px auto 20px;
+	padding: 15px;
 	background: #f4f7f8;
 	border-radius: 8px;
 	font-family: Georgia, "Times New Roman", Times, serif
@@ -13,19 +13,19 @@
     font-family: Georgia, "Times New Roman", Times, serif;
 	border-radius: 4px;
 	font-size: 15px;
-	padding: 10px;
+	padding: 5px;
 	width: 100%;
 	background-color: #e8eeef;
 	color:#454749;
-    margin-top: 20px
+    margin-top: 15px
 }
 
 .form input[type="submit"] {
     background-color: #0ebb98;
     width: 100px;
     height: 40px;
-    margin-left: 30px;
-    margin-top: 50px
+    margin-left: 20px;
+    margin-top: 10px
 }
 
 .label {
