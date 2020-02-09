@@ -155,13 +155,17 @@
     padding: 10px;
     bottom: 10px;
     background-color: rgb(5, 115, 143);
-    color: rgb(255, 255, 255);
     width: 150px;
     margin: auto;
     outline: none;
     cursor: pointer;
     display: inline-block;
     margin-left: 5px;
+  }
+
+  .shareBtn a {
+    text-decoration: none;
+    color: white
   }
 
   #nav {

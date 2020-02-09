@@ -15,7 +15,7 @@ const ResultComponent = props => {
                 ))}
             <div id="buttons">
             <button className="playAgainBtn" onClick={props.play}>Play again</button>
-            <button className="shareBtn">Share</button>
+            <button className="shareBtn" data-href="https://quiz-3002b.firebaseapp.com/" data-layout="button"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fquiz-3002b.firebaseapp.com%2F&amp;src=sdkpreparse">Share</a></button>
             </div>
           </div>
         </div>
