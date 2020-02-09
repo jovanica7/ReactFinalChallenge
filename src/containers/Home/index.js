@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import './index.css';
 import QuizComponent from './../../components/Quiz/index';
+import NavComponent from '../../components/Nav';
 
 class HomeComponent extends PureComponent {
 
@@ -23,12 +24,9 @@ class HomeComponent extends PureComponent {
 
         else {
             return (     
-                <div className="background">
-                <div className="nav">
-                    <a href="/#"><img className="profilePicture" src={this.props.picture} alt="profilePicture" /></a>
-                    <div id="nick">{this.props.nickName}</div>
-                </div>
-                <div className="home">
+                <div id="homeBackground">
+                <NavComponent picture = {this.props.picture} nickName = {this.props.nickName} />
+                <div id="home">
                     <div id="mathematics">
                         <h1>Mathematics</h1>
                         <button id="mathBtn" className="chooseBtn" onClick={this.selectedQuiz}>Choose me!</button>

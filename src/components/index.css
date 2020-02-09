@@ -156,4 +156,33 @@
     margin-left: 5px;
   }
 
+  #nav {
+    background-color: #3a9c52;
+    overflow: hidden;
+  }
+
+  #nav a {
+      float: left;
+      color: #000000;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+  }
+
+  #profilePicture {
+      width: 30px;
+      height: 30px
+  }
+
+  #profilePicture:hover {
+      transform: scale(2);
+  }
+
+  #nick {
+      margin-left: 55px;
+      margin-top: 20px;
+      width: 50px;
+      height: 20px;
+  }
+
 

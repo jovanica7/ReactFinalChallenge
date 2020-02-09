@@ -1,17 +1,4 @@
-.nav {
-    background-color: #d66a12;
-    overflow: hidden;
-}
-
-.nav a {
-    float: left;
-    color: #000000;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-}
-
-.background {
+#homeBackground {
 	background-image: url("home.jpg");
 	height: auto;
 	width: auto;
@@ -21,7 +8,7 @@
 	margin: 5px  
 }
 
-.home {
+#home {
     display: grid;
     grid-gap: 100px;
     grid-row-gap: 35px;

@@ -20,6 +20,7 @@ class RegisterComponent extends PureComponent {
 
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
+        console.log('pise')
     }
     
     handleUpload = (event) => {
@@ -39,6 +40,7 @@ class RegisterComponent extends PureComponent {
         this.setState({
             submitted: true
         })
+        console.log(this.state)
     }
 
 
@@ -76,7 +78,7 @@ class RegisterComponent extends PureComponent {
                             </td>
                         </tr>
                         <tr>
-                            <td className="label">Gender</td>
+                            <td id="gender">Gender</td>
                             <td>
                                 <input type="radio" name="gender" value="male" onChange={this.handleChange}/> Male
                                 <input type="radio" name="gender" value="female" onChange={this.handleChange}/> Female
@@ -90,7 +92,7 @@ class RegisterComponent extends PureComponent {
                             </td>
                         </tr>
                         <tr>
-                            <td className="label">Picture*</td>
+                            <td id="profPicture">Picture*</td>
                             <td>
                                 <input type="file" name="picture" onChange={this.handleUpload} required/>
                             </td>
