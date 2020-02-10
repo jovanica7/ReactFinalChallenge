@@ -1,6 +1,6 @@
 #homeBackground {
 	background-image: url("home.jpg");
-	height: 650px;
+	height: 100vh;
 	width: auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -10,23 +10,24 @@
 
 #home {
     display: grid;
-    grid-gap: 100px;
-    grid-row-gap: 35px;
-    grid-template-columns: 800px 800px;
-    margin: 10px
+    grid-gap: 5%;
+    grid-row-gap: 5%;
+    grid-template-columns: 1fr 1fr;
+    margin: 5%;
+    justify-items: right;
 }
 
 #mathematics {
     border-style: solid;
-    border-width:5px;
+    border-width: 5px;
     border-color: #b4580c;
     background-color: orange;
-    width: 300px;
-    height: 200px;
+    width: 50%;
+    height: 80%;
     padding: 5px;
     display: inline-block;
-    margin-left: 300px;
-    margin-top: 50px;
+    margin-right: 0px;
+    margin-top: 5%;
 }
    
 #sciNature  {
@@ -34,12 +35,12 @@
     border-color: #b4580c;
     background-color: orange;
     border-width:5px;
-    width: 300px;
-    height: 200px;
+    width: 50%;
+    height: 80%;
     padding: 5px;
     display: inline-block;
-    margin-top: 50px;
-    margin-left: -200px;
+    margin-top: 5%;
+    margin-right: 35%;
 }
    
 #sports {
@@ -47,12 +48,12 @@
     border-color: #b4580c;
     background-color: orange;
     border-width:5px;
-    width: 300px;
-    height: 200px;
+    width: 50%;
+    height: 70%;
     padding: 5px;
     display: inline-block;
-    margin-left: 300px;
-    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-bottom: 10%;
 }
    
 #animals {
@@ -60,12 +61,12 @@
     border-color: #b4580c;
     background-color: orange;
     border-width:5px;
-    width: 300px;
-    height: 200px;
+    width: 50%;
+    height: 70%;
     padding: 5px;
     display: inline-block;
-    margin-left: -200px;
-    margin-bottom: 20px;
+    margin-bottom: 10%;
+    margin-right: 35%;
 }
 
 .chooseBtn {

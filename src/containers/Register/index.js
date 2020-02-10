@@ -58,15 +58,15 @@ class RegisterComponent extends PureComponent {
                         <table>
                             <tbody>
                         <tr>
-                            <td className="label">First Name*</td>
+                            <td className="label">First Name</td>
                             <td>
-                                <input type="text" name="firstName" onChange={this.handleChange} required/>
+                                <input type="text" name="firstName" onChange={this.handleChange}/>
                             </td>
                         </tr>
                         <tr>
-                            <td className="label">Last Name*</td>
+                            <td className="label">Last Name</td>
                             <td>
-                                <input type="text" name="lastName" onChange={this.handleChange} required/>
+                                <input type="text" name="lastName" onChange={this.handleChange}/>
                             </td>
                         </tr>
                         <tr>
