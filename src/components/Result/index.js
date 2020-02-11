@@ -1,13 +1,8 @@
 import React from 'react';
 import '../index.css';
-import MetaTags from 'react-meta-tags';
 
 const ResultComponent = props => {
     return (
-      <>
-      <MetaTags>
-          <meta property="og:description" content={"I have scored " + props.score + " points on this quiz! Can you do better?"}/>
-      </MetaTags>
       <div className="quizBackground">
           <div className="container">
             <h2 className={props.score > 5 ? "passed" : "failed"}>Game Over! You scored {props.score} {props.score === 1? 'point' : 'points'} and {props.score > 5 ? 'succeded' : 'failed'} to solve the quiz.</h2>
@@ -19,12 +14,11 @@ const ResultComponent = props => {
                   </p>
                 ))}
             <div id="buttons">
-            <button className="playAgainBtn" onClick={props.play}>Play again</button>
-            <button className="shareBtn" data-href="https://quiz-3002b.firebaseapp.com/" data-layout="button"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fquiz-3002b.firebaseapp.com%2F&amp;src=sdkpreparse">Share</a></button>
+              <button className="playAgainBtn" onClick={props.play}>Play again</button>
+              <button className="shareBtn" data-href="https://quiz-3002b.firebaseapp.com/" data-layout="button"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fquiz-3002b.firebaseapp.com%2F&amp;src=sdkpreparse">Share</a></button>
             </div>
           </div>
         </div>
-        </>
        )
 }
 
