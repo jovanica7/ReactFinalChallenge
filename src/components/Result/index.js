@@ -1,8 +1,13 @@
 import React from 'react';
 import '../index.css';
+import MetaTags from 'react-meta-tags';
 
 const ResultComponent = props => {
     return (
+      <>
+      <MetaTags>
+          <meta property="og:description" content={"I have scored " + props.score + " points on this quiz! Can you do better?"}/>
+      </MetaTags>
       <div className="quizBackground">
           <div className="container">
             <h2 className={props.score > 5 ? "passed" : "failed"}>Game Over! You scored {props.score} {props.score === 1? 'point' : 'points'} and {props.score > 5 ? 'succeded' : 'failed'} to solve the quiz.</h2>
@@ -19,6 +24,7 @@ const ResultComponent = props => {
             </div>
           </div>
         </div>
+        </>
        )
 }
 
