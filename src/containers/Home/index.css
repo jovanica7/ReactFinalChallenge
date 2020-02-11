@@ -10,8 +10,8 @@
 
 #home {
     display: grid;
-    grid-gap: 5%;
-    grid-row-gap: 5%;
+    grid-gap: 10%;
+    grid-row-gap: 15%;
     grid-template-columns: 1fr 1fr;
     margin: 5%;
     justify-items: right;
@@ -22,8 +22,8 @@
     border-width: 5px;
     border-color: #b4580c;
     background-color: orange;
-    width: 50%;
-    height: 80%;
+    width: 60%;
+    height: 85%;
     padding: 5px;
     display: inline-block;
     margin-right: 0px;
@@ -35,12 +35,12 @@
     border-color: #b4580c;
     background-color: orange;
     border-width:5px;
-    width: 50%;
-    height: 80%;
+    width: 60%;
+    height: 85%;
     padding: 5px;
     display: inline-block;
     margin-top: 5%;
-    margin-right: 45%;
+    margin-right: 35%;
 }
    
 #sports {
@@ -48,8 +48,8 @@
     border-color: #b4580c;
     background-color: orange;
     border-width:5px;
-    width: 50%;
-    height: 70%;
+    width: 60%;
+    height: 75%;
     padding: 5px;
     display: inline-block;
     margin-right: 0px;
@@ -61,12 +61,12 @@
     border-color: #b4580c;
     background-color: orange;
     border-width:5px;
-    width: 50%;
-    height: 70%;
+    width: 60%;
+    height: 75%;
     padding: 5px;
     display: inline-block;
     margin-bottom: 10%;
-    margin-right: 45%;
+    margin-right: 35%;
 }
 
 .chooseBtn {
